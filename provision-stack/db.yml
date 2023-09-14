@@ -2,7 +2,7 @@
 - name: Setup Mysql with accounts db and remote login
   hosts: dbsrvgrp
   gather_facts: no
-  tasks: 
+  tasks:
     - name: Installing Mysql Service and dependencies
       package:
         name: "{{item}}"
@@ -27,13 +27,14 @@
       tags:
         - svc
 
-    - name: Creating mysql user
+    - name: creating mysql user
       mysql_user:
         name: "{{dbuser}}"
         password: "{{dbpass}}"
         priv: '*.*:ALL'
         host: '%'
         state: present
+
 
     - name: Creating accounts DB
       mysql_db:
@@ -50,7 +51,7 @@
         - Restart mysql
       tags:
         - conf
-  
+
   handlers:
     - name: Restart mysql
       service:

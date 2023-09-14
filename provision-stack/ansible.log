@@ -61,3 +61,44 @@ The offending line appears to be:
     tags:
     ^ here
 
+2023-09-14 21:19:29,009 p=14731 u=ubuntu n=ansible | PLAY [Generate artifact, copy artifact & sql file to files directory] *************************************************************************************************************************************
+2023-09-14 21:19:29,023 p=14731 u=ubuntu n=ansible | TASK [Gathering Facts] ************************************************************************************************************************************************************************************
+2023-09-14 21:19:30,185 p=14731 u=ubuntu n=ansible | ok: [localhost]
+2023-09-14 21:19:30,196 p=14731 u=ubuntu n=ansible | TASK [Install jdk, maven, git] ****************************************************************************************************************************************************************************
+2023-09-14 21:19:42,844 p=14731 u=ubuntu n=ansible | ok: [localhost] => (item=git)
+2023-09-14 21:19:45,799 p=14731 u=ubuntu n=ansible | ok: [localhost] => (item=openjdk-8-jdk)
+2023-09-14 21:19:48,295 p=14731 u=ubuntu n=ansible | ok: [localhost] => (item=maven)
+2023-09-14 21:19:48,311 p=14731 u=ubuntu n=ansible | TASK [Clone source code from Github] **********************************************************************************************************************************************************************
+2023-09-14 21:19:49,462 p=14731 u=ubuntu n=ansible | ok: [localhost]
+2023-09-14 21:19:49,476 p=14731 u=ubuntu n=ansible | TASK [mvn install command to buid artifact] ***************************************************************************************************************************************************************
+2023-09-14 21:19:49,611 p=14731 u=ubuntu n=ansible | skipping: [localhost]
+2023-09-14 21:19:49,623 p=14731 u=ubuntu n=ansible | TASK [Copy artifacts to files directory] ******************************************************************************************************************************************************************
+2023-09-14 21:19:49,635 p=16266 u=ubuntu n=ansible | [WARNING]: Unable to find 'Vprofile-repo/target' in expected paths (use -vvvvv to see paths)
+
+2023-09-14 21:19:49,648 p=14731 u=ubuntu n=ansible | TASK [Copy SQL file to files directory] *******************************************************************************************************************************************************************
+2023-09-14 21:19:49,898 p=14731 u=ubuntu n=ansible | An exception occurred during task execution. To see the full traceback, use -vvv. The error was: If you are using a module and expect the file to exist on the remote, see the remote_src option
+2023-09-14 21:19:49,901 p=14731 u=ubuntu n=ansible | fatal: [localhost]: FAILED! => {"changed": false, "msg": "Could not find or access 'Vprofile-repo/src/main/resource/db_backup.sql'\nSearched in:\n\t/home/ubuntu/ansible-aws-vpc/provision-stack/files/Vprofile-repo/src/main/resource/db_backup.sql\n\t/home/ubuntu/ansible-aws-vpc/provision-stack/Vprofile-repo/src/main/resource/db_backup.sql\n\t/home/ubuntu/ansible-aws-vpc/provision-stack/files/Vprofile-repo/src/main/resource/db_backup.sql\n\t/home/ubuntu/ansible-aws-vpc/provision-stack/Vprofile-repo/src/main/resource/db_backup.sql on the Ansible Controller.\nIf you are using a module and expect the file to exist on the remote, see the remote_src option"}
+2023-09-14 21:19:49,907 p=14731 u=ubuntu n=ansible | PLAY RECAP ************************************************************************************************************************************************************************************************
+2023-09-14 21:19:49,907 p=14731 u=ubuntu n=ansible | localhost                  : ok=3    changed=0    unreachable=0    failed=1    skipped=2    rescued=0    ignored=0   
+2023-09-14 21:22:32,294 p=16345 u=ubuntu n=ansible | PLAY [Generate artifact, copy artifact & sql file to files directory] *************************************************************************************************************************************
+2023-09-14 21:22:32,356 p=16345 u=ubuntu n=ansible | TASK [Gathering Facts] ************************************************************************************************************************************************************************************
+2023-09-14 21:22:33,745 p=16345 u=ubuntu n=ansible | ok: [localhost]
+2023-09-14 21:22:33,757 p=16345 u=ubuntu n=ansible | TASK [Install  jdk, maven, git] ***************************************************************************************************************************************************************************
+2023-09-14 21:22:36,475 p=16345 u=ubuntu n=ansible | ok: [localhost] => (item=git)
+2023-09-14 21:22:39,027 p=16345 u=ubuntu n=ansible | ok: [localhost] => (item=openjdk-8-jdk)
+2023-09-14 21:22:41,647 p=16345 u=ubuntu n=ansible | ok: [localhost] => (item=maven)
+2023-09-14 21:22:41,660 p=16345 u=ubuntu n=ansible | TASK [Clone source code from github] **********************************************************************************************************************************************************************
+2023-09-14 21:22:42,410 p=16345 u=ubuntu n=ansible | changed: [localhost]
+2023-09-14 21:22:42,422 p=16345 u=ubuntu n=ansible | TASK [mvn install command to build artifact] **************************************************************************************************************************************************************
+2023-09-14 21:23:27,112 p=16345 u=ubuntu n=ansible | changed: [localhost]
+2023-09-14 21:23:27,135 p=16345 u=ubuntu n=ansible | TASK [Copy artifacts to files directory] ******************************************************************************************************************************************************************
+2023-09-14 21:23:29,077 p=16345 u=ubuntu n=ansible | changed: [localhost] => (item=/home/ubuntu/ansible-aws-vpc/provision-stack/Vprofile-repo/target/vprofile-v2.war)
+2023-09-14 21:23:29,089 p=16345 u=ubuntu n=ansible | TASK [Copy SQL file to files directory] *******************************************************************************************************************************************************************
+2023-09-14 21:23:29,554 p=16345 u=ubuntu n=ansible | changed: [localhost]
+2023-09-14 21:23:29,559 p=16345 u=ubuntu n=ansible | PLAY [Set host to IP Mapping in /etc/hosts file of all the instances in the stack] ************************************************************************************************************************
+2023-09-14 21:23:29,566 p=16345 u=ubuntu n=ansible | TASK [Gathering Facts] ************************************************************************************************************************************************************************************
+2023-09-14 21:23:30,934 p=16345 u=ubuntu n=ansible | ok: [rmq01]
+2023-09-14 21:23:30,940 p=16345 u=ubuntu n=ansible | ok: [mc01]
+2023-09-14 21:23:31,999 p=16345 u=ubuntu n=ansible | ok: [db01]
+2023-09-14 21:29:42,421 p=16345 u=ubuntu n=ansible |  [ERROR]: User interrupted execution
+

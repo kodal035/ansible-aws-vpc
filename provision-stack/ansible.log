@@ -9,3 +9,32 @@
 2023-09-14 19:18:58,907 p=6674 u=ubuntu n=ansible | changed: [localhost]
 2023-09-14 19:18:58,912 p=6674 u=ubuntu n=ansible | PLAY RECAP ************************************************************************************************************************************************************************************************
 2023-09-14 19:18:58,913 p=6674 u=ubuntu n=ansible | localhost                  : ok=3    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2023-09-14 19:26:38,270 p=12264 u=ubuntu n=ansible | PLAY [Set host to IP Mapping in /etc/hosts file of all the instances in the stack] ************************************************************************************************************************
+2023-09-14 19:26:38,330 p=12264 u=ubuntu n=ansible | TASK [Gathering Facts] ************************************************************************************************************************************************************************************
+2023-09-14 19:26:40,345 p=12264 u=ubuntu n=ansible | ok: [rmq01]
+2023-09-14 19:26:40,357 p=12264 u=ubuntu n=ansible | ok: [app01]
+2023-09-14 19:26:40,390 p=12264 u=ubuntu n=ansible | ok: [web01]
+2023-09-14 19:26:40,457 p=12264 u=ubuntu n=ansible | ok: [mc01]
+2023-09-14 19:26:40,705 p=12264 u=ubuntu n=ansible | ok: [cntl]
+2023-09-14 19:26:41,845 p=12264 u=ubuntu n=ansible | ok: [db01]
+2023-09-14 19:26:41,857 p=12264 u=ubuntu n=ansible | TASK [Import VPC setup variable] **************************************************************************************************************************************************************************
+2023-09-14 19:26:41,912 p=12264 u=ubuntu n=ansible | ok: [cntl]
+2023-09-14 19:26:41,938 p=12264 u=ubuntu n=ansible | ok: [web01]
+2023-09-14 19:26:41,962 p=12264 u=ubuntu n=ansible | ok: [app01]
+2023-09-14 19:26:41,993 p=12264 u=ubuntu n=ansible | ok: [rmq01]
+2023-09-14 19:26:41,994 p=12264 u=ubuntu n=ansible | ok: [mc01]
+2023-09-14 19:26:42,002 p=12264 u=ubuntu n=ansible | ok: [db01]
+2023-09-14 19:26:42,013 p=12264 u=ubuntu n=ansible | TASK [Update hosts file for all the hosts] ****************************************************************************************************************************************************************
+2023-09-14 19:26:43,041 p=12264 u=ubuntu n=ansible | changed: [app01]
+2023-09-14 19:26:43,043 p=12264 u=ubuntu n=ansible | changed: [mc01]
+2023-09-14 19:26:43,044 p=12264 u=ubuntu n=ansible | changed: [rmq01]
+2023-09-14 19:26:43,044 p=12264 u=ubuntu n=ansible | changed: [web01]
+2023-09-14 19:26:43,106 p=12264 u=ubuntu n=ansible | changed: [cntl]
+2023-09-14 19:26:43,390 p=12264 u=ubuntu n=ansible | changed: [db01]
+2023-09-14 19:26:43,395 p=12264 u=ubuntu n=ansible | PLAY RECAP ************************************************************************************************************************************************************************************************
+2023-09-14 19:26:43,395 p=12264 u=ubuntu n=ansible | app01                      : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2023-09-14 19:26:43,396 p=12264 u=ubuntu n=ansible | cntl                       : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2023-09-14 19:26:43,396 p=12264 u=ubuntu n=ansible | db01                       : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2023-09-14 19:26:43,397 p=12264 u=ubuntu n=ansible | mc01                       : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2023-09-14 19:26:43,397 p=12264 u=ubuntu n=ansible | rmq01                      : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2023-09-14 19:26:43,397 p=12264 u=ubuntu n=ansible | web01                      : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   

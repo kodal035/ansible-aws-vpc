@@ -1,0 +1,21 @@
+- name: Generate artifact, copy artifact & sql file to files directory
+  hosts: localhost
+  connection: local
+  become: yes
+  tasks:
+    - name: Install jdk, maven, git
+      apt: 
+        name: "{{item}}"
+        state: present
+        update_cache: yes
+      loop:
+        - git
+        - openjdk-8-jdk
+        - maven
+
+    - name: Clone source code from Github
+      git: 
+        repo: 'https://github.com/kodal035/vprofile-project.git'
+        dest: ./Vprofile-repo
+        version: vp-rem
+      register: git_status

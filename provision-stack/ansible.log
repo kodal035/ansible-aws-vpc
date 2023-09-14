@@ -49,3 +49,15 @@ The offending line appears to be:
     - name: Copy SQL file to files directory
       ^ here
 
+2023-09-14 21:16:52,834 p=14544 u=ubuntu n=ansible | ERROR! Syntax Error while loading YAML.
+  did not find expected '-' indicator
+
+The error appears to be in '/home/ubuntu/ansible-aws-vpc/provision-stack/memcache.yml': line 10, column 5, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+      cache_valid_time: 86400
+    tags:
+    ^ here
+
